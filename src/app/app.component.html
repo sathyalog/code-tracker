@@ -3,7 +3,7 @@
   <span class="example-spacer"></span>
     <button md-button>Menu <!--<md-icon>menu</md-icon>--></button>
     <button md-button (click)="login()" *ngIf="!(user | async)?.uid">Google Signin</button>
-    <button md-button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
+    <button md-button (click)="logout()" [routerLink]="['/welcome']" *ngIf="(user | async)?.uid">Logout</button>
 </md-toolbar>
 <h1>
   <md-card>
@@ -11,3 +11,6 @@
   </md-card>
   
 </h1>
+<div class='container'>
+    <router-outlet></router-outlet> 
+</div>

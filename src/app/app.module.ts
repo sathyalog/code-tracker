@@ -2,13 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdCheckboxModule, MdDatepickerModule, MdInputModule, MdRadioModule, MdSelectModule, MdSlideToggleModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdSnackBarModule, MdMenuModule, MdToolbarModule, MdIconModule, MdCheckboxModule, MdDatepickerModule, MdInputModule, MdRadioModule, MdSelectModule, MdSlideToggleModule } from '@angular/material';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewTicketComponent } from './new-ticket/new-ticket.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 export const firebaseConfig = {
 
@@ -24,7 +28,10 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    NewTicketComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,10 +48,20 @@ export const firebaseConfig = {
     MdInputModule,
     MdRadioModule,
     MdSelectModule,
+    MdSnackBarModule,
     MdSlideToggleModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    RouterModule.forRoot([
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {path: 'new', component: NewTicketComponent},
+      {path: 'welcome', component: WelcomeComponent},
+      {path: '', redirectTo: 'welcome', pathMatch: 'full'}
+    ])
 
   ],
   providers: [],
