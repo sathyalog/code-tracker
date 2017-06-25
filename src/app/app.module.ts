@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdSnackBarModule, MdMenuModule, MdToolbarModule, MdIconModule, MdCheckboxModule, MdDatepickerModule, MdInputModule, MdRadioModule, MdSelectModule, MdSlideToggleModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdChipsModule, MdSnackBarModule, MdMenuModule, MdToolbarModule, MdIconModule, MdCheckboxModule, MdDatepickerModule, MdInputModule, MdRadioModule, MdSelectModule, MdSlideToggleModule } from '@angular/material';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
@@ -45,6 +45,7 @@ export const firebaseConfig = {
     MdIconModule,
     MdCheckboxModule,
     MdDatepickerModule,
+    MdChipsModule,
     MdInputModule,
     MdRadioModule,
     MdSelectModule,
@@ -64,7 +65,9 @@ export const firebaseConfig = {
     ])
 
   ],
-  providers: [],
+  providers: [
+    //{provide: DateAdapter, useClass: MyDateAdapter}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,135 @@
 <div *ngIf="isLoggedIn;else loginTmpl">
-<p>
-  new-ticket works!
-</p>
+  <p class="has">
+    HAS-Ticket
+  </p>
+  <br/>
+
+  <form name="addTicket" class='addTicket'>
+    <md-input-container>
+      <input mdInput placeholder="HAS Number" value="HAS-">
+    </md-input-container>
+    <br/>
+    <md-input-container class="fullwidth">
+      <input mdInput placeholder="Summary" value="">
+    </md-input-container>
+    <br/><br/>
+ <div class="form-group">
+    <section class="example-section">
+    <!--<md-select placeholder="Environment" [(ngModel)]="selectedValue" name="env">
+      <md-option *ngFor="let env of environments" [value]="env.value">
+        {{env.viewValue}}
+      </md-option>
+    </md-select>-->
+    <p class='stream'>
+    Stream17
+  </p>
+    <md-input-container class="fullwidth">
+      <input mdInput placeholder="PR" value="">
+    </md-input-container>
+    <md-input-container class="fullwidth">
+      <input mdInput placeholder="Branch" value="">
+    </md-input-container>
+    
+    <br/>
+
+    
+ 
+    <span class="">QA certified</span>
+
+    
+      <md-slide-toggle class="example-margin" [(ngModel)]="qastatus" [ngModelOptions]="{standalone: true}">
+        Pass
+      </md-slide-toggle><br/>
+      <p> PR Status: 
+      <md-radio-group class="example-radio-group" [(ngModel)]="prStatus">
+      <md-radio-button class="radio" *ngFor="let stat of status" [value]="stat">
+        {{stat}}
+      </md-radio-button>
+    </md-radio-group>
+    </p>
+    </section>
+   </div>
+
+<!--=================================================-->
+<div class="form-group">
+    <section class="example-section">
+    <p class='stream'>
+    Release
+  </p>
+    <md-input-container class="fullwidth">
+      <input mdInput placeholder="PR" value="">
+    </md-input-container>
+    <md-input-container class="fullwidth">
+      <input mdInput placeholder="Branch" value="">
+    </md-input-container>
+    
+    <br/>
+
+    
+ 
+    <span class="">QA certified</span>
+
+    
+      <md-slide-toggle class="example-margin" [(ngModel)]="qastatus" [ngModelOptions]="{standalone: true}">
+        Pass
+      </md-slide-toggle><br/>
+      <p> PR Status: 
+      <md-radio-group class="example-radio-group" [(ngModel)]="prStatus">
+      <md-radio-button class="radio" *ngFor="let stat of status" [value]="stat">
+        {{stat}}
+      </md-radio-button>
+    </md-radio-group>
+    </p>
+    </section>
+   </div>
+
+   <!-- ========================== -->
+  <div class="form-group">
+    <section class="example-section">
+    <!--<md-select placeholder="Environment" [(ngModel)]="selectedValue" name="env">
+      <md-option *ngFor="let env of environments" [value]="env.value">
+        {{env.viewValue}}
+      </md-option>
+    </md-select>-->
+    <p class='stream'>
+    Master
+  </p>
+    <md-input-container class="fullwidth">
+      <input mdInput placeholder="PR" value="">
+    </md-input-container>
+    <md-input-container class="fullwidth">
+      <input mdInput placeholder="Branch" value="">
+    </md-input-container>
+    
+    <br/>
+
+    
+ 
+    <span class="">QA certified</span>
+
+    
+      <md-slide-toggle class="example-margin" [(ngModel)]="qastatus" [ngModelOptions]="{standalone: true}">
+        Pass
+      </md-slide-toggle><br/>
+      <p> PR Status: 
+      <md-radio-group class="example-radio-group" [(ngModel)]="prStatus">
+      <md-radio-button class="radio" *ngFor="let stat of status" [value]="stat">
+        {{stat}}
+      </md-radio-button>
+    </md-radio-group>
+    </p>
+    </section>
+   </div>
+
+    <p>
+      <md-input-container class="fullwidth">
+        <textarea mdInput placeholder="Additional Note"></textarea>
+      </md-input-container>
+
+    </p>
+
+<button md-raised-button>Add Ticket</button>
+  </form>
+
 </div>
 <ng-template #loginTmpl> Hey! Please login to access this page.</ng-template>

@@ -1,6 +1,43 @@
 <div *ngIf="isLoggedIn;else loginTmpl">
-<p>
-  dashboard works!
-</p>
+
+<div class="example-button-row">
+    <a md-mini-fab [routerLink]="['/new']"><i class="material-icons">add</i></a>
+</div><br/><br/>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>HAS Ticket</th>
+        <th>Stream17</th>
+        <th>Release</th>
+        <th>Master</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HAS-4746</td>
+        <td>XYZ</td>
+        <td>ABC</td>
+        <td>123</td>
+        <td><i class="material-icons">mode_edit</i></td>
+      </tr>
+      <tr>
+        <td>HAS-4748</td>
+        <td>XYZ</td>
+        <td>ABC</td>
+        <td>123</td>
+        <td><i class="material-icons">mode_edit</i></td>
+      </tr>
+      <tr>
+        <td>HAS-4747</td>
+        <td>XYZ</td>
+        <td>ABC</td>
+        <td>123</td>
+        <td><i class="material-icons">mode_edit</i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </div>
 <ng-template #loginTmpl> Hey! Please login to access this page.</ng-template>

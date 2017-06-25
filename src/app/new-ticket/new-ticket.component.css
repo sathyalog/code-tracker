@@ -1,0 +1,20 @@
+.has {
+    font-size: 18px;
+    text-decoration: underline;
+}
+.addTicket {
+    width: 50%;
+}
+
+.fullwidth {
+    width:100%
+}
+
+.radio{
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.stream{
+    color: green;
+}
