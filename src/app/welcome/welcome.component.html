@@ -1,3 +1,7 @@
-<p>
-  Welcome to Code Tracker!
+
+<div *ngIf="isLoggedIn;else loginTmpl">
+ <p>
+  Hey User! Welcome.
 </p>
+ </div>
+ <ng-template #loginTmpl> Please login to use < > Code Tracker!!</ng-template>

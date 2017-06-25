@@ -13,6 +13,7 @@ import { AngularFireModule } from 'angularfire2';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewTicketComponent } from './new-ticket/new-ticket.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { NotesComponent } from './notes/notes.component';
 
 export const firebaseConfig = {
 
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     AppComponent,
     DashboardComponent,
     NewTicketComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,7 @@ export const firebaseConfig = {
       },
       {path: 'new', component: NewTicketComponent},
       {path: 'welcome', component: WelcomeComponent},
+      {path: 'notes', component: NotesComponent},
       {path: '', redirectTo: 'welcome', pathMatch: 'full'}
     ])
 

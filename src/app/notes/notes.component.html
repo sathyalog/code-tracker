@@ -1,0 +1,4 @@
+ <div *ngIf="isLoggedIn;else loginTmpl">
+ <textarea id="my-editor-id" (onEditorKeyup)="keyupHandlerFunction($event)" style="height:600px" [(ngModel)]="text"></textarea>
+ </div>
+ <ng-template #loginTmpl> Hey! Please login to access this page.</ng-template>
