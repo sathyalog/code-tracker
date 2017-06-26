@@ -4,7 +4,7 @@
     <button md-button [routerLink]="['/welcome']">Home <!--<md-icon>menu</md-icon>--></button>
     <button md-button (click)="login()" *ngIf="!(user | async)?.uid">Google Signin</button>
     <button md-button [routerLink]="['/dashboard']" *ngIf="(user | async)?.uid">Dashboard</button>
-    <button md-button [routerLink]="['/notes']" *ngIf="(user | async)?.uid">Notes</button>
+    <button md-button (click)="navigateToNotes()" *ngIf="(user | async)?.uid">Notes</button>
     <button md-button (click)="logout()" [routerLink]="['/welcome']" *ngIf="(user | async)?.uid">Logout</button>
 </md-toolbar>
 <h1>

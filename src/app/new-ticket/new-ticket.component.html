@@ -6,11 +6,11 @@
 
   <form name="addTicket" class='addTicket'>
     <md-input-container>
-      <input mdInput placeholder="HAS Number" value="HAS-">
+      <input mdInput placeholder="HAS Number" name="has-ticket" value="HAS-" [(ngModel)]="hasVal" >
     </md-input-container>
     <br/>
     <md-input-container class="fullwidth">
-      <input mdInput placeholder="Summary" value="">
+      <input mdInput placeholder="Summary" name="summary" value="" [(ngModel)]="hasSummary" >
     </md-input-container>
     <br/><br/>
  <div class="form-group">
@@ -24,10 +24,10 @@
     Stream17
   </p>
     <md-input-container class="fullwidth">
-      <input mdInput placeholder="PR" value="">
+      <input mdInput placeholder="PR" value="" name="streampr" [(ngModel)]="strmPrLink" >
     </md-input-container>
     <md-input-container class="fullwidth">
-      <input mdInput placeholder="Branch" value="">
+      <input mdInput placeholder="Branch" name="streambranch" value="" [(ngModel)]="strmPrBranch" >
     </md-input-container>
     
     <br/>
@@ -37,11 +37,11 @@
     <span class="">QA certified</span>
 
     
-      <md-slide-toggle class="example-margin" [(ngModel)]="qastatus" [ngModelOptions]="{standalone: true}">
+      <md-slide-toggle class="example-margin" name="qa-cert" [(ngModel)]="qastatus" [ngModelOptions]="{standalone: true}">
         Pass
       </md-slide-toggle><br/>
       <p> PR Status: 
-      <md-radio-group class="example-radio-group" [(ngModel)]="prStatus">
+      <md-radio-group class="example-radio-group" name="qa-val" [(ngModel)]="prStatus">
       <md-radio-button class="radio" *ngFor="let stat of status" [value]="stat">
         {{stat}}
       </md-radio-button>
@@ -57,10 +57,10 @@
     Release
   </p>
     <md-input-container class="fullwidth">
-      <input mdInput placeholder="PR" value="">
+      <input mdInput placeholder="PR" name="releasepr" value="" [(ngModel)]="rlsPrLink" >
     </md-input-container>
     <md-input-container class="fullwidth">
-      <input mdInput placeholder="Branch" value="">
+      <input mdInput placeholder="Branch" name="releasebranch" value="" [(ngModel)]="rlsPrBranch" >
     </md-input-container>
     
     <br/>
@@ -70,11 +70,11 @@
     <span class="">QA certified</span>
 
     
-      <md-slide-toggle class="example-margin" [(ngModel)]="qastatus" [ngModelOptions]="{standalone: true}">
+      <md-slide-toggle class="example-margin" name="qa-cert" [(ngModel)]="qastatus" [ngModelOptions]="{standalone: true}">
         Pass
       </md-slide-toggle><br/>
       <p> PR Status: 
-      <md-radio-group class="example-radio-group" [(ngModel)]="prStatus">
+      <md-radio-group class="example-radio-group" name="qa-val" [(ngModel)]="prStatus">
       <md-radio-button class="radio" *ngFor="let stat of status" [value]="stat">
         {{stat}}
       </md-radio-button>
@@ -86,19 +86,14 @@
    <!-- ========================== -->
   <div class="form-group">
     <section class="example-section">
-    <!--<md-select placeholder="Environment" [(ngModel)]="selectedValue" name="env">
-      <md-option *ngFor="let env of environments" [value]="env.value">
-        {{env.viewValue}}
-      </md-option>
-    </md-select>-->
     <p class='stream'>
     Master
   </p>
     <md-input-container class="fullwidth">
-      <input mdInput placeholder="PR" value="">
+      <input mdInput placeholder="PR" value="" name="masterpr" [(ngModel)]="masterPrLink" >
     </md-input-container>
     <md-input-container class="fullwidth">
-      <input mdInput placeholder="Branch" value="">
+      <input mdInput placeholder="Branch" value="" name="masterbranch" [(ngModel)]="masterPrBranch" >
     </md-input-container>
     
     <br/>
@@ -108,11 +103,11 @@
     <span class="">QA certified</span>
 
     
-      <md-slide-toggle class="example-margin" [(ngModel)]="qastatus" [ngModelOptions]="{standalone: true}">
+      <md-slide-toggle class="example-margin" name="qa-cert" [(ngModel)]="qastatus" >
         Pass
       </md-slide-toggle><br/>
       <p> PR Status: 
-      <md-radio-group class="example-radio-group" [(ngModel)]="prStatus">
+      <md-radio-group class="example-radio-group" name="qa-val" [(ngModel)]="prStatus">
       <md-radio-button class="radio" *ngFor="let stat of status" [value]="stat">
         {{stat}}
       </md-radio-button>
@@ -123,7 +118,7 @@
 
     <p>
       <md-input-container class="fullwidth">
-        <textarea mdInput placeholder="Additional Note"></textarea>
+        <textarea mdInput placeholder="Additional Note" name="addnote" [(ngModel)]="addNote" ></textarea>
       </md-input-container>
 
     </p>

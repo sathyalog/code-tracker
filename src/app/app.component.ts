@@ -43,5 +43,9 @@ export class AppComponent {
           console.log(err);
       }
   )};
+  navigateToNotes(){
+    this.router.navigate(['/notes']);
+    location.reload();
+  }
 
 }
