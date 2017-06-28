@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-new-ticket',
   templateUrl: './new-ticket.component.html',
@@ -8,14 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class NewTicketComponent implements OnInit {
 isLoggedIn:boolean = localStorage.getItem('authToken')?true:false;
   constructor() { }
-
+  onSubmit(f: NgForm) {
+    console.log(f.value);  // { first: '', last: '' }
+    console.log(f.valid);  // false
+  }
   ngOnInit() {
   }
-  environments = [
-    {value: 'stream17', viewValue: 'Stream17'},
-    {value: 'release17.8', viewValue: 'Release 17.8'},
-    {value: 'master', viewValue: 'Master'}
-  ];
+  
   status = [
     'Approved',
     'Declined',

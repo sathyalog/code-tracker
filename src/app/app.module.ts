@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +26,16 @@ export const firebaseConfig = {
  
  };
 
+const appRoutes: Routes = [
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {path: 'new', component: NewTicketComponent},
+      {path: 'welcome', component: WelcomeComponent},
+      {path: 'notes', component: NotesComponent},
+      {path: '', redirectTo: 'welcome', pathMatch: 'full'}
+]
 
 @NgModule({
   declarations: [
@@ -56,17 +66,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    RouterModule.forRoot([
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {path: 'new', component: NewTicketComponent},
-      {path: 'welcome', component: WelcomeComponent},
-      {path: 'notes', component: NotesComponent},
-      {path: '', redirectTo: 'welcome', pathMatch: 'full'}
-    ])
-
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     //{provide: DateAdapter, useClass: MyDateAdapter}
